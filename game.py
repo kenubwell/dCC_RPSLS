@@ -10,10 +10,10 @@ class Game:
         self.player2 = None
 
     def run_game(self):
-        pass
+        self.display_welcome()
+        self.game_type()
 
     def display_welcome(self):
-        # \n = space for visual
         print('\nWelcome to Rock, Paper, Scissors, Lizard, Spock (RPSLS).')
         print('The following are the rules of the game:')
         print('- Rock crushes Scissors')
@@ -26,4 +26,28 @@ class Game:
         print('- Lizard eats Paper')
         print('- Paper disproves Spock')
         print('- Spock vaporizes Rock')
-        print('The first player to win TWICE wins the Game.')
+        print('The first player to win TWICE wins the Game. \n')
+
+    def game_type(self):
+        type_of_game = int(input(
+            'Choose the type of game. Press "1" for Multiplayer game or Press "2" for Single Player vs. AI: '))
+        game_type = False
+
+        while game_type is False:
+            if type_of_game == 1 or type_of_game == 2:
+                if type_of_game == 1:
+                    self.player1.choose_gesture()
+                    self.player2 = Human().choose_gesture()
+                    game_type = True
+                elif type_of_game == 2:
+                    self.player2 = AI().choose_gesture()
+            elif type_of_game != 1 or type_of_game != 2:
+                print('Invalid Entry.')
+                type_of_game = int(input(
+                    'Choose the type of game. Press "1" for Multiplayer game or Press "2" for Single Player vs. AI: '))
+
+    def display_winner(self):
+        pass
+
+    def tbd(self):
+        pass
