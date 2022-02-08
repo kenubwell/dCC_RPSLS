@@ -2,7 +2,8 @@
 #(10 points): As a player, I want the game of RPSLS to be at minimum a ‘best of three’ to decide a winner. 
 #(10 points): As a player, I want the option of a single player (human vs AI) or a multiplayer (human vs human) game.  
 #(5 points): As a developer, I want to account for and handle bad user input, ensuring that any user input is validated and reobtained if necessary.
-    #Lines 41 and 55 for input validation (if/elif conditional)
+    #Lines 42 and 55 for input validation (if/elif conditional)
+#Imported the Time module for better output readability/timing via the terminal
 
 from human import Human
 from ai import AI
@@ -21,7 +22,7 @@ class Game:
 
     def display_welcome(self):
         print('\nWelcome to Rock, Paper, Scissors, Lizard, Spock (RPSLS).')
-        print('Each game will be the best of three rounds a.k.a. first player to win TWICE.')
+        print('Each game will be the best of three rounds a.k.a. first player to win TWICE wins the game.')
         print('The following are the rules of the game:')
         print('- Rock crushes Scissors')
         print('- Scissors cuts Paper')
@@ -63,7 +64,7 @@ class Game:
             
         while self.player1.wins < 2 and self.player2.wins < 2:
             
-            time.sleep(1)
+            time.sleep(2)
             print(f"\nCurrent Round is 'Round {round_count}'")
             self.player1.choose_gesture()
             self.player2.choose_gesture()
