@@ -9,8 +9,6 @@ import time
 class AI(Player):
     def __init__(self):
         super().__init__()
-        self.set_name()
-        #self.choose_gesture()
 
     def set_name(self):
         self.name = 'SkyNet'

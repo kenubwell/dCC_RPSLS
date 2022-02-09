@@ -44,6 +44,7 @@ class Game:
                 if type_of_game == 1:
                     self.player2 = AI()
                     self.player1.set_name()
+                    self.player2.set_name()
                     print(f'\nIt will be Player 1 "{self.player1.name}" versus AI opponent "{self.player2.name}".  Good Luck!')
                     game_type = True
                 elif type_of_game == 2:
